@@ -62,7 +62,7 @@ class Main {
         answer[i]='\0';
       }
     }
-    int small=0;
+    int small=0,smallest=0;
 
     for(i=0;i<strArr[0].length()-strArr[1].length()+1;i++)
     {
@@ -70,11 +70,18 @@ class Main {
       if(numbers[small]>numbers[i] && numbers[i]>1)
       {
         small=i;
+        smallest=numbers[small];
       }
     }
+    char ans[]=new char[smallest];
+    for(i=0;i<smallest;i++)
+    {
+      ans[i]=answers[small].charAt(i);
+    }
+    String value=String.valueOf(ans);
 
 
-    return answers[small];
+    return value;
   }
 
 
@@ -87,7 +94,7 @@ class Main {
     String hel[]= new String[2];
     hel[0]=first;
     hel[1]=second;
-    System.out.print(MinWindowSubstring(hel)); 
+    System.out.print(MinWindowSubstring(hel));
   }
 
 }
